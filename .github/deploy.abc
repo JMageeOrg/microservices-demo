@@ -57,7 +57,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
-        sed -i.bak "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" manifests/hello-app-deployment.yaml && \
-        sed -i.bak "s|EKS_K8S_NAMESPACE|$EKS_K8S_NAMESPACE|g" manifests/hello-app-deployment.yaml
+        sed -i.bak "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" deploy/kubernetes/complete-demo.yaml && \
+        sed -i.bak "s|EKS_K8S_NAMESPACE|$EKS_K8S_NAMESPACE|g" deploy/kubernetes/complete-demo.yaml
         kubectl get nodes
-        kubectl apply -f manifests/hello-app-deployment.yaml -n $EKS_K8S_NAMESPACE
+        kubectl apply -f deploy/kubernetes/complete-demo.yaml -n $EKS_K8S_NAMESPACE
