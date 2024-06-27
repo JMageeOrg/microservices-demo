@@ -10,7 +10,7 @@ on:
 
 env:
   ECR_REPOSITORY: wizcontainerapp
-  EKS_CLUSTER_NAME: wizcontainerapp
+  EKS_CLUSTER_NAME: WIZ_EKS_Cluster
   AWS_REGION: eu-west-1
   EKS_K8S_NAMESPACE: wizcontainerapp
 
