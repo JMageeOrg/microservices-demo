@@ -9,10 +9,10 @@ on:
     branches: [ main ]
 
 env:
-  ECR_REPOSITORY: wizcontainerapp
-  EKS_CLUSTER_NAME: WIZ_EKS_Cluster
+  ECR_REPOSITORY: BBECRImage
+  EKS_CLUSTER_NAME: BB_EKS_Cluster
   AWS_REGION: eu-west-1
-  EKS_K8S_NAMESPACE: wizcontainerapp
+  EKS_K8S_NAMESPACE:bbeksns
 
 jobs:
   
